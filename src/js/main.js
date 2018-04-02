@@ -9,7 +9,7 @@ function init() {
     document.getElementById("Links").innerHTML = this.responseText;
   }
   httpRequest.send();
-  loadContent("indexContent.php);
+  loadContent("indexContent.php");
 }
 
 function loadContent(page) {
