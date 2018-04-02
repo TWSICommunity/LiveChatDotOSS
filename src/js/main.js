@@ -9,12 +9,12 @@ function init() {
     document.getElementById("Links").innerHTML = this.responseText;
   }
   httpRequest.send();
-  loadContent();
+  loadContent("indexContent.php);
 }
 
-function loadContent() {
+function loadContent(page) {
  console.log("Loading content page.");
- httpRequest.open("GET", mainLinksrc+"contentLayout.php", true);
+ httpRequest.open("GET", mainLinksrc+page, true);
  httpRequest.onload = function() {
   document.getElementById("bodypage").innerHTML = this.responseText;
  }
