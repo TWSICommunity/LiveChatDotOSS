@@ -40,13 +40,13 @@ if(isset($_POST['login'])) {
 	$username = $_POST['username'];
 	$password = hash("sha512",$_POST['password']);
 	
-	$getInfo = $c->query("SELECT * FROM users WHERE users = '$username'");
+	$getInfo = $c->query("SELECT * FROM users");
 	while($u=$getInfo->fetchArray()) {
 		$us=$u['username'];
 		$ps=$u['passname'];
 		$id=$u['id'];
 		
-		if($us == $username) {
+		if($us == $username && $ps == $password) {
 			$_SESSION['login_info'] = $us."|".$id;
 		}
 	}
